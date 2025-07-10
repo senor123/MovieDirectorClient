@@ -1,0 +1,17 @@
+﻿@page
+@model MovieDirectorClient.Pages.NewMovieModel
+@{
+    <form method="post">
+        <input type="text" asp-for="Title" />
+        <br/>
+        <input type="text" asp-for="Genre" />
+        <br />
+        @foreach(var directorName in Model.directorNames)
+        {
+            <input type="checkbox" name="DirectorIds" value="@directorName.Id" />
+            <label>@directorName.Name</label>
+        }
+        <button type="submit">Add Movie</button>
+        <p>@Model.errorMessage</p>
+    </form>
+}

@@ -1,0 +1,10 @@
+﻿@page "{id}"
+@model MovieDirectorClient.Pages.MovieUpdateModel
+@{
+    <h1>Movie Updation</h1>
+    <form method="post">
+        <input class="form-control" asp-for="Id" value="@Model.Id" />
+        <input class="form-control mt-5" asp-for="Name" value="@Model.Name" />
+        <button>Submit</button>
+    </form>
+}

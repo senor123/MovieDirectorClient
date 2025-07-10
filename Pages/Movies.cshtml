@@ -1,0 +1,29 @@
+﻿@page
+@model MovieDirectorClient.Pages.MoviesModel
+
+<h2>Movies</h2>
+<table class="table table-striped table-hover">
+    <thead class="table-dark w-100">
+        <tr>
+            <th class="me-5">MovieId</th>
+            <th>Movie Name</th>
+            <th>Movie Genre</th>
+            <th>Update</th>
+            <th>Delete</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var movie in Model.Movies)
+        {
+            <tr>
+                <td>@movie.id</td>
+                <td>@movie.Title</td>
+                <td>@movie.Action</td>
+
+                <td><form asp-page-handler="Edit" asp-route-id="@movie.id" method="post"><button class="btn btn-warning">Update</button></form></td>
+                <td><form asp-page-handler="Delete" asp-route-id="@movie.id" method="post"><button class="btn btn-warning">Delete</button></form></td>
+            </tr>
+        }
+    </tbody>
+</table>

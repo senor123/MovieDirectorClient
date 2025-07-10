@@ -1,0 +1,26 @@
+﻿@page
+@model MovieDirectorClient.Pages.DirectorsModel
+@{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>DirectorId</th>
+                <th>Director Name</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var director in Model.Directors)
+            {
+                <tr>
+                    <td>@director.Id</td>
+                    <td>@director.Name</td>
+                    <td><button class="btn btn-warning">Update</button></td>
+                    <td><form asp-asp-page-handler="Delete" asp-route-id=""><button class="btn btn-danger">Delete</button></form></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
