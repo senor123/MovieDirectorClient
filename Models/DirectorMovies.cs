@@ -10,5 +10,7 @@ namespace MovieDirectorClient.Models
 
         [property: JsonPropertyName("genre")] public string Action { get; set; }
 
+        [property:JsonPropertyName("directors")] public List<Directors> Directors { get; set; }
+
     }
 }

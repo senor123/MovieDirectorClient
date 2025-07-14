@@ -8,6 +8,7 @@
             <th class="me-5">MovieId</th>
             <th>Movie Name</th>
             <th>Movie Genre</th>
+            <th>Directors</th>
             <th>Update</th>
             <th>Delete</th>
 
@@ -20,7 +21,12 @@
                 <td>@movie.id</td>
                 <td>@movie.Title</td>
                 <td>@movie.Action</td>
-
+                <td>
+                @foreach(var director in movie.Directors)
+                {
+                    <span>@director.Name,</span>
+                }
+                </td>
                 <td><form asp-page-handler="Edit" asp-route-id="@movie.id" method="post"><button class="btn btn-warning">Update</button></form></td>
                 <td><form asp-page-handler="Delete" asp-route-id="@movie.id" method="post"><button class="btn btn-warning">Delete</button></form></td>
             </tr>

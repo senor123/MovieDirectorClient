@@ -6,6 +6,8 @@
             <tr>
                 <th>DirectorId</th>
                 <th>Director Name</th>
+                <th>Director Age</th>
+                <th>Movies</th>
                 <th>Update</th>
                 <th>Delete</th>
             </tr>
@@ -16,8 +18,15 @@
                 <tr>
                     <td>@director.Id</td>
                     <td>@director.Name</td>
-                    <td><button class="btn btn-warning">Update</button></td>
-                    <td><form asp-asp-page-handler="Delete" asp-route-id=""><button class="btn btn-danger">Delete</button></form></td>
+                    <td>@director.Age</td>
+                    <td>
+                    @foreach(var movie in director.Movies)
+                    {
+                        <span>@movie.Title,</span>
+                    }
+                    </td>
+                    <td><form asp-page-handler="Edit" asp-route-id="@director.Id" method="post"><button class="btn btn-warning">Update</button></form></td>
+                    <td><form asp-page-handler="Delete" asp-route-id="@director.Id" method="post"><button class="btn btn-danger">Delete</button></form></td>
                 </tr>
             }
         </tbody>

@@ -1,0 +1,20 @@
+﻿@page "{id}"
+@model MovieDirectorClient.Pages.DirectorUpdationModel
+@{
+    <form asp-page-handler="Edit" method="post">
+        <label>Id</label>
+        <input asp-for="Id" value="@Model.Id" />
+
+        <label>Name</label>
+        <input asp-for="Name" value="@Model.Name" />
+
+        <label>Age</label>
+        <input asp-for="Age" value="@Model.Age" />
+
+        <label>Movie IDs</label>
+        <input asp-for="MovieIds" value="@Model.MovieIds" />
+        
+        <button>Update Director</button>
+    </form>
+    
+}

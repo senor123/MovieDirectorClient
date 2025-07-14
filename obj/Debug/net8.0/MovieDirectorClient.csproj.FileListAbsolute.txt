@@ -31,3 +31,4 @@ C:\Users\Pardhasaradhi.Avula\source\repos\MovieDirectorClient\obj\Debug\net8.0\r
 C:\Users\Pardhasaradhi.Avula\source\repos\MovieDirectorClient\obj\Debug\net8.0\MovieDirectorClient.pdb
 C:\Users\Pardhasaradhi.Avula\source\repos\MovieDirectorClient\obj\Debug\net8.0\MovieDirectorClient.genruntimeconfig.cache
 C:\Users\Pardhasaradhi.Avula\source\repos\MovieDirectorClient\obj\Debug\net8.0\ref\MovieDirectorClient.dll
+C:\Users\Pardhasaradhi.Avula\source\repos\MovieDirectorClient\obj\Debug\net8.0\MovieDirectorClient.sourcelink.json

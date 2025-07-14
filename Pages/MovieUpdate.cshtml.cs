@@ -17,6 +17,12 @@ namespace MovieDirectorClient.Pages
 
         [BindProperty]
         public string Name { get; set; }
+
+
+        public void OnGet(int id)
+        {
+            Id = id;
+        }
         public async Task OnPostAsync(int id)
         {
             MovieCreation m = new MovieCreation

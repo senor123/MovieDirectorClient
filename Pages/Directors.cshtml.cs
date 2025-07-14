@@ -6,18 +6,37 @@ namespace MovieDirectorClient.Pages
 {
     public class DirectorsModel : PageModel
     {
-        private MovieServices _movieServices;
+        private DirectorServices _directorServices;
 
-        public DirectorsModel(MovieServices movieServices)
+        public DirectorsModel(DirectorServices directorServices)
         {
-            _movieServices = movieServices;
+            _directorServices = directorServices;
         }
 
         public List<Directors> Directors { get; set; }
 
         public async Task OnGetAsync()
         {
-            Directors = await _movieServices.getDirectorNames();
+            Directors = await _directorServices.getDirectorNames();
+        }
+
+        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        {
+            
+            Directors = await _directorServices.getDirectorNames();
+
+            HttpResponseMessage message=await _directorServices.deleteDirector(id);
+
+            return RedirectToPage("/Directors");
+        }
+
+        public async Task<IActionResult> OnPostEditAsync(int id)
+        {
+            Directors = await _directorServices.getDirectorNames();
+
+
+            Console.WriteLine("Updating accessed");
+            return RedirectToPage("/DirectorUpdation", new { id });
         }
 
     }
